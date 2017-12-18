@@ -23,6 +23,7 @@ public class NotifyPersonServiceTest {
 	public void notifyTest(){
 		//Arrange
 		Person person = new PersonTestDataBuilder().whitName("Esteban").whitLastName("Castro").build();
+		// Usar Mock para probar clase Email
 		Mockito.when(emailService.sendMail(Mockito.anyString())).thenReturn("Hola mundo");
 		//Act
 		String message = notifyPersonService.nofifyPerson(person);;
